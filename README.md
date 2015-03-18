@@ -8,8 +8,9 @@ Ansible.
 ### requirements
 
   * ansible 1.8.2+
-  * configure your site.yml roles
-  * configure your host_vars
+  * configure your site.yml roles ([site.yml](https://github.com/ryankanno/ansible-development/blob/master/site.yml))
+  * configure your inventory file ([production.example](https://github.com/ryankanno/ansible-development/blob/master/production.example))
+  * configure your host_vars file ([localhost.example](https://github.com/ryankanno/ansible-development/blob/master/host_vars/localhost.example))
 
 ### running
 
