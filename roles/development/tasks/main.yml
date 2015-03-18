@@ -1,7 +1,6 @@
 ---
+  - include: package_installer_os_macosx.yml
+    when: ansible_distribution == "MacOSX"
 
-- include: package_installer_os_macosx.yml
-  when: ansible_distribution == "MacOSX"
-
-- include: dotfiles_os_macosx.yml
-  when: ansible_distribution == "MacOSX"
+  - include: dotfiles_os_macosx.yml
+    when: ansible_distribution == "MacOSX"
