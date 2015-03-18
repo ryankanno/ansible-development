@@ -52,3 +52,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# ansible
+host_vars/localhost
+production
