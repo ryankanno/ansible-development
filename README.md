@@ -14,4 +14,4 @@ Ansible.
 
 ### running
 
-`ansible-playbook site.yml -i production`
+`ansible-playbook site.yml -i production --connection=local`
