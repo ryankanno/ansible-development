@@ -1,0 +1,11 @@
+---
+
+macports_packages:
+  - erlang
+  - htop
+  - php
+  - python27
+  - readline
+  - the_silver_searcher
+  - tmux
+  - tor

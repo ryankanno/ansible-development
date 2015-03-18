@@ -1,0 +1,4 @@
+# file: production
+
+[devmachine]
+localhost ansible_sudo_pass='foobar'

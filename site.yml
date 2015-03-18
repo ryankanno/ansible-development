@@ -2,6 +2,6 @@
 
 - hosts: devmachine
   connection: local
-
+  sudo: yes
   roles:
     - development
