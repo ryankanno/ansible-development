@@ -1,0 +1,4 @@
+---
+
+- hosts: devmachine
+  connection: local
