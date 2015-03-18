@@ -4,3 +4,4 @@
     with_items: macports_packages
     tags:
       - macports
+    when: macports_packages is defined
