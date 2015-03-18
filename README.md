@@ -1,4 +1,5 @@
-# portable-dev
+# ansible-development
 
-My attempt to create a reproducible, isolated development environment for my
-machines.
+My attempt to create a reproducible, isolated development environment using
+Ansible.
+
