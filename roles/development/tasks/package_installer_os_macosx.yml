@@ -1,0 +1,6 @@
+---
+  - name: package_installer_os_mac_install | install macports packages
+    macports: name={{ item }} state=present
+    with_items: macports_packages
+    tags:
+      - macports

@@ -2,3 +2,6 @@
 
 - hosts: devmachine
   connection: local
+
+  roles:
+    - development
