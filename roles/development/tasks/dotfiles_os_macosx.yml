@@ -1,3 +1,0 @@
----
-  - name: run on mac
-    debug: msg="hello from mac"
