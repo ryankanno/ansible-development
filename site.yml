@@ -1,6 +1,6 @@
 ---
-
-- hosts: devmachine
-  sudo: yes
-  roles:
-    - development
+  - hosts: devmachine
+    sudo: yes
+    roles:
+      - development
+      - { role: dock, when: "ansible_distribution == 'MacOSX'" }

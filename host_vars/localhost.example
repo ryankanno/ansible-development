@@ -1,9 +1,14 @@
 ---
 
+env:
+  proxies:
+    http_proxy:
+    https_proxy:
+
 macports_packages:
   - erlang
   - htop
-  - "'macvim +python27 +ruby20'"
+  - "'MacVim @7.4.snapshot73_1+huge+python27+ruby20'"
   - php
   - python27
   - readline

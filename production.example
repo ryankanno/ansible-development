@@ -1,4 +1,4 @@
 # file: production
 
 [devmachine]
-localhost ansible_sudo_pass='foobar'
+localhost ansible_sudo_user='foo' ansible_sudo_pass='bar'

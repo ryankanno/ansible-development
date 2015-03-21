@@ -1,0 +1,25 @@
+---
+  # http://krypted.com/tag/persistent-others/
+
+  - name: 'dock: remove persistent-apps'
+    command: '/usr/bin/defaults delete com.apple.dock persistent-apps'
+    when: dock is defined and dock.persistent_apps is defined
+    tags:
+      - dock
+
+  - name: 'dock: remove persistent-others'
+    command: '/usr/bin/defaults delete com.apple.dock persistent-others'
+    when: dock is defined and dock.persistent_others is defined
+    tags:
+      - dock
+
+  - name: 'dock: insert persistent-apps'
+    command: '/usr/bin/defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>{{ item }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"'
+    with_items: dock.persistent_apps
+    when: dock is defined and dock.persistent_apps is defined
+    tags:
+      - dock
+
+  - name: 'dock: kill dock'
+    command: /usr/bin/killall Dock
+    when: dock is defined and (dock.persistent_apps is defined or dock.persistent_others is defined)
