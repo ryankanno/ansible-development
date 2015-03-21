@@ -1,5 +1,5 @@
 ---
-  - name: package_installer_osmacosx | install macports packages
+  - name: package_installer_os_macosx | install macports packages
     macports: name={{ item }} state=present
     with_items: macports_packages
     environment: env.proxies
@@ -7,7 +7,7 @@
       - macports
     when: macports_packages is defined
 
-  - name: package_installer_osmacosx | install homebrew packages
+  - name: package_installer_os_macosx | install homebrew packages
     homebrew: name={{ item }} state=present
     with_items: homebrew_packages
     environment: env.proxies
