@@ -23,3 +23,5 @@
   - name: 'dock: kill dock'
     command: /usr/bin/killall Dock
     when: dock is defined and (dock.persistent_apps is defined or dock.persistent_others is defined)
+    tags:
+      - dock
