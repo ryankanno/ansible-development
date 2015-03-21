@@ -1,0 +1,4 @@
+---
+
+  - name: 'finder: kill finder'
+    command: /usr/bin/killall Finder
