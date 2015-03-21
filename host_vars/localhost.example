@@ -3,6 +3,7 @@
 macports_packages:
   - erlang
   - htop
+  - "'macvim +python27 +ruby20'"
   - php
   - python27
   - readline
