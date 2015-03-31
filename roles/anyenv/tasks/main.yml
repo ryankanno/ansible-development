@@ -1,0 +1,12 @@
+---
+  - name: anyenv | main | install anyenv from git repo
+    git: repo="{{ anyenv.git_url }}" dest="{{ anyenv.install_dir }}"
+    tags:
+      - anyenv
+
+  - name: anyenv | main | install anyenv environments
+    command: eval "$(anyenv init -)"; anyenv install {{ item }} creates={{ anyenv.install_dir }}/envs/{{ item }}
+    with_items:
+      - "{{ anyenv.environments }}"
+    tags:
+      - anyenv

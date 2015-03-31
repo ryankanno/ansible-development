@@ -4,5 +4,6 @@
     roles:
       - development
       - dotfiles
+      - anyenv
       - { role: dock, when: "ansible_distribution == 'MacOSX'" }
       - { role: finder, when: "ansible_distribution == 'MacOSX'" }
