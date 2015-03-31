@@ -8,7 +8,7 @@
     when: macports_packages is defined
 
   - name: development | package_installer_os_macosx | update homebrew
-  - homebrew: update_homebrew=yes
+    homebrew: update_homebrew=yes
     environment: env.proxies
     tags:
       - homebrew
