@@ -2,14 +2,14 @@
   - name: development | package_installer_os_macosx | install macports packages
     macports: name={{ item }} state=present
     with_items: macports_packages
-    environment: env.proxies
+    environment: env
     tags:
       - macports
     when: macports_packages is defined
 
   - name: development | package_installer_os_macosx | update homebrew
     homebrew: update_homebrew=yes
-    environment: env.proxies
+    environment: env
     tags:
       - homebrew
     when: homebrew_packages is defined
@@ -17,7 +17,7 @@
   - name: development | package_installer_os_macosx | install homebrew packages
     homebrew: name={{ item }} state=present
     with_items: homebrew_packages
-    environment: env.proxies
+    environment: env
     tags:
       - homebrew
     when: homebrew_packages is defined
