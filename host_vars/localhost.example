@@ -29,9 +29,8 @@ anyenv:
   git_url: https://github.com/riywo/anyenv.git
   install_dir: ~/.anyenv
   environments:
-    - pyenv
-    - rbenv
-    - goenv
+    - { 'environment':'pyenv', 'versions': ['2.7.9', '3.2.6', '3.3.6'] }
+    - { 'environment':'rbenv', 'versions': ['1.9.3-p551'] }
 
 dock:
   persistent_apps:
