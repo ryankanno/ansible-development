@@ -1,0 +1,22 @@
+---
+  - name: pyenv | main | get pyenv installation dir
+    command: echo "{{ anyenv.install_dir }}/envs/pyenv"
+    register: pyenv_install_dir
+    tags:
+      - pyenv
+
+  - name: pyenv | main | install pyenv-virtualenv
+    git: repo="https://github.com/yyuu/pyenv-virtualenv.git" dest="{{ pyenv_install_dir.stdout }}/plugins/pyenv-virtualenv"
+    tags:
+      - pyenv
+
+  - name: pyenv | main | install .pyenvrc
+    template: src=pyenvrc.j2 dest={{ pyenv_install_dir.stdout }}/.pyenvrc mode=0644
+    tags:
+      - pyenv
+
+  - name: pyenv | main | install python(s)
+    shell: . {{ pyenv_install_dir.stdout }}/.pyenvrc && pyenv install {{ item }} creates="{{ pyenv_install_dir.stdout }}/versions/{{ item }}/bin/python"
+    with_items: pyenv.pythons
+    tags:
+      - pyenv

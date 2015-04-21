@@ -5,16 +5,8 @@
       - anyenv
 
   - name: anyenv | main | install anyenv environments
-    command: eval "$(anyenv init -)"; anyenv install {{ item.environment }} creates={{ anyenv.install_dir }}/envs/{{ item.environment }}
+    command: eval "$(anyenv init -)"; anyenv install {{ item }} creates={{ anyenv.install_dir }}/envs/{{ item }}
     with_items:
       - "{{ anyenv.environments }}"
-    tags:
-      - anyenv
-
-  - name: anyenv | main | install specific environment versions
-    shell: eval "$(anyenv init -)"; {{ item.0.environment }} install {{ item.1 }} creates={{ anyenv.install_dir }}/envs/{{ item.0.environment }}/versions/{{ item.1 }}
-    with_subelements:
-      - "{{ anyenv.environments }}"
-      - versions
     tags:
       - anyenv

@@ -1,0 +1,5 @@
+---
+  - name: bashmarks | main | install bashmarks from git repo
+    git: repo="{{ bashmarks.git_url }}" dest="{{ bashmarks.install_dir }}"
+    tags:
+      - bashmarks
