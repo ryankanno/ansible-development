@@ -8,5 +8,6 @@
       - { role: pyenv, when: "'pyenv' in anyenv.environments" }
       - { role: rbenv, when: "'rbenv' in anyenv.environments" }
       - bashmarks
+      - bash_it
       - { role: dock, when: "ansible_distribution == 'MacOSX'" }
       - { role: finder, when: "ansible_distribution == 'MacOSX'" }

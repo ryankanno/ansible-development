@@ -1,0 +1,5 @@
+---
+  - name: bash_it | main | install bash-it from git repo
+    git: repo="{{ bash_it.git_url }}" dest="{{ bash_it.install_dir }}"
+    tags:
+      - bash_it
