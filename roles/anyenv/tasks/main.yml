@@ -5,7 +5,7 @@
       - anyenv
 
   - name: anyenv | main | install anyenv environments
-    command: eval "$(anyenv init -)"; anyenv install {{ item }} creates={{ anyenv.install_dir }}/envs/{{ item }}
+    command: eval "$({{ anyenv.install_dir }}/bin/anyenv init -)"; anyenv install {{ item }} creates={{ anyenv.install_dir }}/envs/{{ item }}
     with_items:
       - "{{ anyenv.environments }}"
     tags:

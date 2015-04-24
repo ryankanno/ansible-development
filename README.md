@@ -25,4 +25,4 @@ Ansible.
 
 #### running the playbook
 
-`ansible-playbook site.yml -i production --connection=local`
+`ansible-playbook site.yml -i production --connection=local --ask-sudo-pass`

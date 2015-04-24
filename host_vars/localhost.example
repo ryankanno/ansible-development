@@ -5,17 +5,34 @@ env:
   https_proxy:
 
 macports_packages:
+  - bsdiff
+  - cloc
   - erlang
+  - git
   - htop
+  - iftop
+  - lesspipe
   - "'MacVim @7.4.snapshot73_1+huge+python27+ruby20'"
+  - mosh
+  - mtr
+  - ncurses
+  - ncdu
+  - p5-innotop
+  - parallel
+  - pv
   - readline
+  - slurm
+  - sysdig
   - the_silver_searcher
   - tmux
+  - tmux-pasteboard
   - tor
-  - mosh
+  - ttyrec
+  - vcs_blackbox
+  - zmq
 
 dotfiles:
-  dir: ~/.dotfiles
+  install_dir: "{{ lookup('env','HOME') }}/.dotfiles"
   git:
     git_path: /usr/bin/git
   rcm:
@@ -26,7 +43,7 @@ dotfiles:
 
 anyenv:
   git_url: https://github.com/riywo/anyenv.git
-  install_dir: ~/.anyenv
+  install_dir: "{{ lookup('env','HOME') }}/.anyenv"
   environments:
     - pyenv
     - rbenv
@@ -47,8 +64,8 @@ dock:
 
 bashmarks:
   git_url: https://github.com/huyng/bashmarks.git
-  install_dir: ~/.bashmarks
+  install_dir: "{{ lookup('env','HOME') }}/.bashmarks"
 
 bash_it:
   git_url: https://github.com/Bash-it/bash-it
-  install_dir: ~/.bash_it
+  install_dir: "{{ lookup('env','HOME') }}/.bash_it"

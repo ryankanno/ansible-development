@@ -1,5 +1,14 @@
 ---
   - name: bash_it | main | install bash-it from git repo
-    git: repo="{{ bash_it.git_url }}" dest="{{ bash_it.install_dir }}"
+    git: repo="{{ bash_it.git_url }}" dest="{{ bash_it.install_dir }}" force=yes
+    tags:
+      - bash_it
+
+  - name: bash_it | main | update hawaii50 theme to disable ip
+    lineinfile: dest="{{ bash_it.install_dir }}/themes/hawaii50/hawaii50.theme.bash"
+                regexp="^IP_ENABLED=1"
+                line="IP_ENABLED=0"
+                backrefs=yes
+                state=present
     tags:
       - bash_it
