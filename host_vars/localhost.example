@@ -12,7 +12,7 @@ macports_packages:
   - htop
   - iftop
   - lesspipe
-  - "'MacVim @7.4.snapshot73_1+huge+python27+ruby20'"
+  - "'MacVim @7.4.snapshot76_1+huge+python27+ruby20'"
   - mosh
   - mtr
   - ncurses
@@ -21,6 +21,7 @@ macports_packages:
   - parallel
   - pv
   - readline
+  - rcm
   - slurm
   - sysdig
   - the_silver_searcher
