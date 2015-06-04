@@ -4,6 +4,7 @@
     roles:
       - development
       - dotfiles
+      - vim
       - anyenv
       - { role: pyenv, when: "'pyenv' in anyenv.environments" }
       - { role: rbenv, when: "'rbenv' in anyenv.environments" }
