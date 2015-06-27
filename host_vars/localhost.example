@@ -28,6 +28,7 @@ macports_packages:
   - tmux
   - tmux-pasteboard
   - tor
+  - tree
   - ttyrec
   - vcs_blackbox
   - zmq
