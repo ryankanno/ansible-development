@@ -1,7 +1,8 @@
+[![Build Status](https://travis-ci.org/ryankanno/ansible-development.svg?branch=master)](https://travis-ci.org/ryankanno/ansible-development)
+
 # ansible-development
 
-My attempt to create a reproducible, isolated development environment using
-Ansible.
+A reproducible, isolated development environment using Ansible.
 
 ## installation
 
