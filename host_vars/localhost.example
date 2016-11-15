@@ -5,6 +5,7 @@ env:
   https_proxy:
 
 macports_packages:
+  - autossh
   - bsdiff
   - cloc
   - coreutils
