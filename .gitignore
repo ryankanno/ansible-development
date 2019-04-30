@@ -56,3 +56,6 @@ target/
 # ansible
 host_vars/localhost
 production
+
+# vim
+tags
