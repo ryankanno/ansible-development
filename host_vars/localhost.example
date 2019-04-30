@@ -17,6 +17,7 @@ macports_packages:
   - httpie
   - iftop
   - inetutils
+  - jrnl
   - lesspipe
   - "'MacVim @8.0.snapshot146_0+huge+python36+ruby20'"
   - mosh
