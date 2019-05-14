@@ -40,8 +40,12 @@ macports_packages:
   - vcs_blackbox
   - zmq
 
-homebrew_packages:
+homebrew_cask_app_dir: /Applications
+
+homebrew_cask_packages:
   - keycastr
+
+homebrew_packages:
   - zmap
 
 homebrew_taps:
