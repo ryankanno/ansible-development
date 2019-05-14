@@ -2,13 +2,17 @@
   - hosts: devmachine
     sudo: yes
     roles:
-      - development
-      - dotfiles
-      - vim
-      - anyenv
-      - { role: pyenv, when: "'pyenv' in anyenv.environments" }
-      - { role: rbenv, when: "'rbenv' in anyenv.environments" }
-      - bashmarks
-      - bash_it
-      - { role: dock, when: "ansible_distribution == 'MacOSX'" }
-      - { role: finder, when: "ansible_distribution == 'MacOSX'" }
+      - role: anyenv
+      - role: bash_it
+      - role: bashmarks
+      - role: development
+      - role: dotfiles
+      - role: vim
+      - role: pyenv
+        when: "'pyenv' in anyenv.environments"
+      - role: rbenv
+        when: "'rbenv' in anyenv.environments"
+      - role: dock
+        when: "ansible_distribution == 'MacOSX'"
+      - role: finder
+        when: "ansible_distribution == 'MacOSX'"

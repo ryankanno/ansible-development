@@ -40,6 +40,14 @@ macports_packages:
   - vcs_blackbox
   - zmq
 
+homebrew_packages:
+  - keycastr
+  - zmap
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
 dotfiles:
   install_dir: "{{ lookup('env','HOME') }}/.dotfiles"
   git:

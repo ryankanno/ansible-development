@@ -27,9 +27,3 @@ A reproducible, isolated development environment using Ansible.
 #### running the playbook
 
 `ansible-playbook site.yml -i production --connection=local --ask-sudo-pass`
-
-# todo
-
-  - add in homebrew role
-      - add https://github.com/zmap/zmap
-      - add https://github.com/keycastr/keycastr
