@@ -11,6 +11,7 @@ macports_packages:
   - coreutils
   - duplicity
   - erlang
+  - fasd
   - git
   - glances
   - htop
@@ -19,11 +20,11 @@ macports_packages:
   - inetutils
   - jrnl
   - lesspipe
-  - "'MacVim @8.0.snapshot146_0+huge+python36+ruby20'"
   - mosh
   - mtr
   - ncurses
   - ncdu
+  - nvim
   - p5-innotop
   - parallel
   - pv
