@@ -39,6 +39,7 @@ macports_packages:
   - tree
   - ttyrec
   - vcs_blackbox
+  - wtfutil
   - zmq
 
 homebrew_cask_app_dir: /Applications
