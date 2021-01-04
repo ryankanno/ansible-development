@@ -12,6 +12,7 @@ macports_packages:
   - duplicity
   - erlang
   - fasd
+  - fzf
   - git
   - glances
   - htop
@@ -24,12 +25,14 @@ macports_packages:
   - mtr
   - ncurses
   - ncdu
+  - neovim
   - nvim
   - p5-innotop
   - parallel
   - pv
   - readline
   - rcm
+  - rdfind
   - ripgrep
   - slurm
   - sysdig
@@ -39,7 +42,10 @@ macports_packages:
   - tree
   - ttyrec
   - vcs_blackbox
+  - vcs_blackbox
+  - vscode
   - wtfutil
+  - yadm
   - zmq
 
 homebrew_cask_app_dir: /Applications
