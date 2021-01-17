@@ -51,9 +51,12 @@ macports_packages:
 homebrew_cask_app_dir: /Applications
 
 homebrew_cask_packages:
+  - finicky
+  - font-hack-nerd-font
   - keycastr
 
 homebrew_packages:
+  - bitbar
   - zmap
 
 homebrew_taps:
