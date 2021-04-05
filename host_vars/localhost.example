@@ -7,6 +7,7 @@ env:
 macports_packages:
   - autossh
   - bsdiff
+  - chezmoi
   - cloc
   - coreutils
   - duplicity
