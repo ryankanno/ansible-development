@@ -10,6 +10,7 @@ macports_packages:
   - chezmoi
   - cloc
   - coreutils
+  - dive
   - duplicity
   - erlang
   - fasd
