@@ -1,6 +1,5 @@
 ---
   - hosts: devmachine
-    sudo: yes
     roles:
       - role: anyenv
       - role: bash_it
