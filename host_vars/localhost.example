@@ -60,6 +60,7 @@ homebrew_cask_packages:
 homebrew_packages:
   - bitbar
   - zmap
+  - ddcctl
 
 homebrew_taps:
   - homebrew/core
