@@ -4,7 +4,6 @@
     roles:
       - role: anyenv
       - role: bash_it
-      - role: bashmarks
       - role: development
       - role: dotfiles
       - role: vim
