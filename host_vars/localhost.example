@@ -5,9 +5,8 @@ env:
   https_proxy:
 
 macports_packages:
-  - alacritty
-  - bsdiff
   - chezmoi
+  - erlang
 
 homebrew_bin_path: /usr/local/brew
 

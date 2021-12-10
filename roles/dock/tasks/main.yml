@@ -47,7 +47,7 @@
       domain: com.apple.dock
       key: tilesize
       type: integer
-      value: 64
+      value: 48
     tags:
       - dock
 
