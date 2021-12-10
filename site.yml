@@ -3,13 +3,14 @@
     roles:
       - role: anyenv
       - role: bash_it
-      - role: development
+      - { role: development, ignore_errors: yes }
+      - role: geerlingguy.homebrew  
       - role: dotfiles
       - role: vim
-      - role: pyenv
-        when: "'pyenv' in anyenv.environments"
-      - role: rbenv
-        when: "'rbenv' in anyenv.environments"
+        #- role: pyenv
+        #when: "'pyenv' in anyenv.environments"
+        #- role: rbenv
+        #when: "'rbenv' in anyenv.environments"
       - role: dock
         when: "ansible_distribution == 'MacOSX'"
       - role: finder

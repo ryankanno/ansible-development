@@ -1,2 +1,2 @@
 ---
-  - include: rcm.yml
+  - include_tasks: rcm.yml

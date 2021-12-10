@@ -5,66 +5,28 @@ env:
   https_proxy:
 
 macports_packages:
-  - autossh
+  - alacritty
   - bsdiff
   - chezmoi
-  - cloc
-  - coreutils
-  - dive
-  - duplicity
-  - erlang
-  - fasd
-  - fzf
-  - git
-  - glances
-  - htop
-  - httpie
-  - iftop
-  - inetutils
-  - jrnl
-  - lesspipe
-  - mosh
-  - mtr
-  - ncurses
-  - ncdu
-  - neovim
-  - nvim
-  - p5-innotop
-  - parallel
-  - pv
-  - readline
-  - rcm
-  - rdfind
-  - ripgrep
-  - slurm
-  - sysdig
-  - tmux
-  - tmux-pasteboard
-  - tor
-  - tree
-  - ttyrec
-  - vcs_blackbox
-  - vcs_blackbox
-  - vscode
-  - wtfutil
-  - yadm
-  - zmq
 
-homebrew_cask_app_dir: /Applications
+homebrew_bin_path: /usr/local/brew
 
-homebrew_cask_packages:
-  - finicky
-  - font-hack-nerd-font
-  - keycastr
-
-homebrew_packages:
-  - bitbar
-  - zmap
-  - ddcctl
+homebrew_installed_packages:
+  - docker
+  - tailscale
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+
+homebrew_cask_apps:
+  - alacritty
+  - zoom
+
+homebrew_user: "{{ ansible_user_id }}"
+homebrew_group: "{{ ansible_user_gid }}"
 
 dotfiles:
   install_dir: "{{ lookup('env','HOME') }}/.dotfiles"
@@ -88,6 +50,8 @@ pyenv:
     - 2.7.9
     - 3.2.6
     - 3.3.6
+    - 3.8.2
+    - 3.10.0
 
 rbenv:
   rubies:
@@ -95,11 +59,7 @@ rbenv:
 
 dock:
   persistent_apps:
-    - /Applications/iTerm.app
-
-bashmarks:
-  git_url: https://github.com/huyng/bashmarks.git
-  install_dir: "{{ lookup('env','HOME') }}/.bashmarks"
+    - /Applications/Firefox.app
 
 bash_it:
   git_url: https://github.com/Bash-it/bash-it

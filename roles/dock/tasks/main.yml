@@ -1,21 +1,62 @@
 ---
-  # http://krypted.com/tag/persistent-others/
   - name: dock | main | remove persistent-apps
-    command: '/usr/bin/defaults delete com.apple.dock persistent-apps'
+    community.general.osx_defaults:
+      domain: com.apple.dock
+      key: persistent-apps
+      state: absent
     when: dock is defined and dock.persistent_apps is defined
     tags:
       - dock
 
   - name: dock | main | remove persistent-others
-    command: '/usr/bin/defaults delete com.apple.dock persistent-others'
+    community.general.osx_defaults:
+      domain: com.apple.dock
+      key: persistent-others
+      state: absent
     when: dock is defined and dock.persistent_others is defined
     tags:
       - dock
 
   - name: dock | main | insert persistent-apps
-    command: '/usr/bin/defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>{{ item }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"'
-    with_items: dock.persistent_apps
+    command: defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>{{ item }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+    with_items: "{{ dock.persistent_apps }}"
     when: dock is defined and dock.persistent_apps is defined
+    tags:
+      - dock
+
+  - name: dock | main | enable animations
+    community.general.osx_defaults:
+      domain: com.apple.finder
+      key: DisableAllAnimations
+      type: bool
+      value: false
+      state: present
+    tags:
+      - dock
+
+  - name: dock | main | enable autohide
+    community.general.osx_defaults:
+      domain: com.apple.dock
+      key: autohide
+      value: 1
+    tags:
+      - dock
+
+  - name: dock | main | load smaller icons
+    community.general.osx_defaults:
+      domain: com.apple.dock
+      key: tilesize
+      type: integer
+      value: 64
+    tags:
+      - dock
+
+  - name: dock | main | set on left side
+    community.general.osx_defaults:
+      domain: com.apple.dock
+      key: orientation
+      type: string
+      value: left
     tags:
       - dock
 

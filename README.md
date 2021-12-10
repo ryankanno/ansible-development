@@ -8,15 +8,12 @@ A reproducible, isolated development environment using Ansible.
 
 ### requirements
 
-  - install [ansible 1.8.2+](http://docs.ansible.com/intro_installation.html#installation)
+  - install [ansible 5.x+](http://docs.ansible.com/intro_installation.html#installation)
   - configure your site.yml roles ([site.yml](https://github.com/ryankanno/ansible-development/blob/master/site.yml))
   - configure your inventory file ([production.example](https://github.com/ryankanno/ansible-development/blob/master/production.example))
   - configure your host_vars file ([localhost.example](https://github.com/ryankanno/ansible-development/blob/master/host_vars/localhost.example))
-
-#### installing ansible
-#### configure your site.yml
-#### configure your inventory file
-#### configure your host_vars file
+  - ansible-galaxy install geerlingguy.homebrew
+  - ansible-galaxy collection install community.general
 
 ### running
 
@@ -26,4 +23,4 @@ A reproducible, isolated development environment using Ansible.
 
 #### running the playbook
 
-`ansible-playbook site.yml -i production --connection=local --ask-sudo-pass`
+`ansible-playbook site.yml -i production --connection=local -K`
