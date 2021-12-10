@@ -1,7 +1,7 @@
 ---
   - name: vim | main | ensure git is installed
-    stat: path={{ dotfiles.git.git_path }}
-    register: git_installed
+    debug:
+      msg: "TODO"
 
   - name: vim | main | install vimrc
     shell: curl -o - https://raw.githubusercontent.com/ryankanno/vim-config/master/install.sh | bash creates=~/.vim-config
