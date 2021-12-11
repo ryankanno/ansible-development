@@ -4,9 +4,12 @@ env:
   http_proxy:
   https_proxy:
 
-macports_packages:
+macports_installed_packages:
   - chezmoi
   - erlang
+
+macports_uninstalled_packages:
+  - alacritty
 
 homebrew_bin_path: /usr/local/brew
 
