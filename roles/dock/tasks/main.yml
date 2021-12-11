@@ -38,7 +38,8 @@
     community.general.osx_defaults:
       domain: com.apple.dock
       key: autohide
-      value: 1
+      type: bool
+      value: true
     tags:
       - dock
 
