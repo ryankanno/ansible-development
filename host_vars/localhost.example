@@ -28,11 +28,7 @@ homebrew_user: "{{ ansible_user_id }}"
 homebrew_group: "{{ ansible_user_gid }}"
 
 dotfiles:
-  install_dir: "{{ lookup('env','HOME') }}/.dotfiles"
-  git:
-    git_path: /usr/bin/git
-  rcm:
-    rcup_path: /opt/local/bin/rcup
+  chezmoi:
     repo:
       name: https://github.com/ryankanno/dotfiles.git
       version: HEAD
