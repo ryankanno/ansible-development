@@ -17,6 +17,6 @@
 
   - name: pyenv | main | install python(s)
     shell: . {{ pyenv_install_dir.stdout }}/.pyenvrc && pyenv install {{ item }} creates="{{ pyenv_install_dir.stdout }}/versions/{{ item }}/bin/python"
-    with_items: pyenv.pythons
+    with_items: "{{ pyenv.pythons }}"
     tags:
       - pyenv
