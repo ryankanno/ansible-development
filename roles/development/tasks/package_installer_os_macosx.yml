@@ -2,7 +2,6 @@
   - name: development | package_installer_os_macosx | installed macports packages
     macports: name={{ item }} state=present
     with_items: "{{ macports_installed_packages }}"
-    environment: env
     become: yes
     tags:
       - macports
@@ -11,7 +10,6 @@
   - name: development | package_installer_os_macosx | uninstalled macports packages
     macports: name={{ item }} state=absent
     with_items: "{{ macports_uninstalled_packages }}"
-    environment: env
     become: yes
     tags:
       - macports
