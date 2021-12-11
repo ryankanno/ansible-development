@@ -7,7 +7,9 @@
       - anyenv 
 
   - name: anyenv | main | install anyenv from git repo
-    git: repo="{{ anyenv.git_url }}" dest="{{ anyenv.install_dir }}"
+    git:
+      repo: "{{ anyenv.git_url }}"
+      dest: "{{ anyenv.install_dir }}"
     tags:
       - anyenv
     when: not anyenv_dir.stat.exists
@@ -15,6 +17,8 @@
   - name: anyenv | main | check anyenv-install
     stat:
       path: ~/.config/anyenv/anyenv-install
+    tags:
+      - anyenv
     register: anyenv_install
 
   - name: anyenv | main | init anyenv
