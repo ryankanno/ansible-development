@@ -4,7 +4,7 @@
     - role: anyenv
     - role: bash_it
     - {role: development, ignore_errors: yes}
-    - role: geerlingguy.homebrew
+    - role: geerlingguy.mac.homebrew
     - role: dotfiles
     - role: vim
     - role: pyenv

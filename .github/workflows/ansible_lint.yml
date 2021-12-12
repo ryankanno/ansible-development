@@ -9,6 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: setup environment
+        run: |
+          ansible-galaxy install -r requirements.yml
+
       - name: "lint ansible playbook"
         uses: ansible/ansible-lint-action@master
         with:
