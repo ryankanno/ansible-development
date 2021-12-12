@@ -1,3 +1,5 @@
 ---
 - include_tasks: package_installer_os_macosx.yml
   when: ansible_distribution == "MacOSX"
+  tags:
+    - macports
