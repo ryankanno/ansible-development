@@ -19,8 +19,8 @@ A reproducible, isolated development environment using Ansible.
 
 #### displaying ansible variables about your machine
 
-`ansible devmachine -i production -m setup --connection=local`
+`ansible devmachine -i production -m setup
 
 #### running the playbook
 
-`ansible-playbook site.yml -i production --connection=local -K`
+`ansible-playbook site.yml -i production -K`
