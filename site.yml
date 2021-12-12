@@ -5,6 +5,8 @@
     - role: bash_it
     - {role: development, ignore_errors: yes}
     - role: geerlingguy.mac.homebrew
+      tags:
+        - homebrew
     - role: dotfiles
     - role: vim
     - role: pyenv
