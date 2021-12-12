@@ -1,22 +1,26 @@
 ---
-  - name: rbenv | main | get rbenv installation dir
-    command: echo "{{ anyenv.install_dir }}/envs/rbenv"
-    register: rbenv_install_dir
-    tags:
-      - rbenv
+- name: rbenv | main | get rbenv installation dir
+  command: echo "{{ anyenv.install_dir }}/envs/rbenv"
+  register: rbenv_install_dir
+  tags:
+    - rbenv
 
-  - name: rbenv | main | install rbenv-gemset
-    git: repo="https://github.com/jf/rbenv-gemset.git" dest="{{ rbenv_install_dir.stdout }}/plugins/rbenv-gemset"
-    tags:
-      - rbenv
+- name: rbenv | main | install rbenv-gemset
+  git:
+    repo: "{{ rbenv.gemset.git_url }}"
+    dest: "{{ rbenv_install_dir.stdout }}/plugins/rbenv-gemset"
+    version: "{{ rbenv.gemset.version }}"
+  tags:
+    - rbenv
+  when: rbenv.gemset is defined
 
-  - name: rbenv | main | install .rbenvrc
-    template: src=rbenvrc.j2 dest={{ rbenv_install_dir.stdout }}/.rbenvrc
-    tags:
-      - rbenv
+- name: rbenv | main | install .rbenvrc
+  template: src=rbenvrc.j2 dest={{ rbenv_install_dir.stdout }}/.rbenvrc mode=0644
+  tags:
+    - rbenv
 
-  - name: rbenv | main | install ruby(ies)
-    shell: . {{ rbenv_install_dir.stdout }}/.rbenvrc && rbenv install {{ item }} creates="{{ rbenv_install_dir.stdout }}/versions/{{ item }}/bin/ruby"
-    with_items: rbenv.rubies
-    tags:
-      - rbenv
+- name: rbenv | main | install ruby(ies)
+  shell: . {{ rbenv_install_dir.stdout }}/.rbenvrc && rbenv install {{ item }} creates="{{ rbenv_install_dir.stdout }}/versions/{{ item }}/bin/ruby"
+  with_items: "{{ rbenv.rubies }}"
+  tags:
+    - rbenv

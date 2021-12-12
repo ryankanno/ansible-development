@@ -1,40 +1,41 @@
 ---
-  - name: anyenv | main | check anyenv install dir
-    stat:
-      path: "{{ anyenv.install_dir }}"
-    register: anyenv_dir
-    tags:
-      - anyenv 
+- name: anyenv | main | check anyenv install dir
+  stat:
+    path: "{{ anyenv.install_dir }}"
+  register: anyenv_dir
+  tags:
+    - anyenv
 
-  - name: anyenv | main | install anyenv from git repo
-    git:
-      repo: "{{ anyenv.git_url }}"
-      dest: "{{ anyenv.install_dir }}"
-    tags:
-      - anyenv
-    when: not anyenv_dir.stat.exists
+- name: anyenv | main | install anyenv from git repo
+  git:
+    repo: "{{ anyenv.git_url }}"
+    dest: "{{ anyenv.install_dir }}"
+    version: "{{ anyenv.version }}"
+  tags:
+    - anyenv
+  when: not anyenv_dir.stat.exists
 
-  - name: anyenv | main | check anyenv-install
-    stat:
-      path: ~/.config/anyenv/anyenv-install
-    tags:
-      - anyenv
-    register: anyenv_install
+- name: anyenv | main | check anyenv-install
+  stat:
+    path: ~/.config/anyenv/anyenv-install
+  tags:
+    - anyenv
+  register: anyenv_install
 
-  - name: anyenv | main | init anyenv
-    shell: anyenv install --force-init
-    environment:
-      PATH: "{{ anyenv.install_dir | regex_replace('^~(.*)$', lookup('env', 'HOME') + '\\1') }}/bin:{{ lookup('env', 'PATH') }}" 
-    tags:
-      - anyenv
-    when: not anyenv_install.stat.exists
+- name: anyenv | main | init anyenv
+  command: anyenv install --force-init
+  environment:
+    PATH: "{{ anyenv.install_dir | regex_replace('^~(.*)$', lookup('env', 'HOME') + '\\1') }}/bin:{{ lookup('env', 'PATH') }}"
+  tags:
+    - anyenv
+  when: not anyenv_install.stat.exists
 
-  - name: anyenv | main | install anyenv environments
-    shell: anyenv install {{ item }} creates={{ anyenv.install_dir }}/envs/{{ item }}
-    with_items:
-      - "{{ anyenv.environments }}"
-    environment:
-      PATH: "{{ anyenv.install_dir | regex_replace('^~(.*)$', lookup('env', 'HOME') + '\\1') }}/bin:{{ lookup('env', 'PATH') }}" 
-    tags:
-      - anyenv
-    when: not anyenv_install.stat.exists
+- name: anyenv | main | install anyenv environments
+  command: anyenv install {{ item }} creates={{ anyenv.install_dir }}/envs/{{ item }}
+  with_items:
+    - "{{ anyenv.environments }}"
+  environment:
+    PATH: "{{ anyenv.install_dir | regex_replace('^~(.*)$', lookup('env', 'HOME') + '\\1') }}/bin:{{ lookup('env', 'PATH') }}"
+  tags:
+    - anyenv
+  when: not anyenv_install.stat.exists

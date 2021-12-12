@@ -1,4 +1,4 @@
 # file: production
 
 [devmachine]
-localhost 
+localhost ansible_connection=local

@@ -1,16 +1,16 @@
 ---
-  - name: development | package_installer_os_macosx | installed macports packages
-    macports: name={{ item }} state=present
-    with_items: "{{ macports_installed_packages }}"
-    become: yes
-    tags:
-      - macports
-    when: macports_installed_packages is defined
+- name: development | package_installer_os_macosx | installed macports packages
+  macports: name={{ item }} state=present
+  with_items: "{{ macports_installed_packages }}"
+  become: yes
+  tags:
+    - macports
+  when: macports_installed_packages is defined
 
-  - name: development | package_installer_os_macosx | uninstalled macports packages
-    macports: name={{ item }} state=absent
-    with_items: "{{ macports_uninstalled_packages }}"
-    become: yes
-    tags:
-      - macports
-    when: macports_uninstalled_packages is defined
+- name: development | package_installer_os_macosx | uninstalled macports packages
+  macports: name={{ item }} state=absent
+  with_items: "{{ macports_uninstalled_packages }}"
+  become: yes
+  tags:
+    - macports
+  when: macports_uninstalled_packages is defined

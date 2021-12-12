@@ -1,9 +1,9 @@
 ---
-  - name: dotfiles | chezmoi | init chezmoi
-    command : chezmoi init {{ dotfiles.chezmoi.repo.name }}#{{ dotfiles.chezmoi.repo.version }}
-    tags:
-      - dotfiles
-      - chezmoi
+- name: dotfiles | chezmoi | init chezmoi
+  command: chezmoi init {{ dotfiles.chezmoi.repo.name }}#{{ dotfiles.chezmoi.repo.version }}
+  tags:
+    - dotfiles
+    - chezmoi
 
-  - name: dotfiles | chezmoi | apply dotfiles
-    command: chezmoi apply
+- name: dotfiles | chezmoi | apply dotfiles
+  command: chezmoi apply
