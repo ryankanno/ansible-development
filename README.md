@@ -24,3 +24,5 @@ A reproducible, isolated development environment using Ansible.
 #### running the playbook
 
 `ansible-playbook site.yml -i production -K`
+
+`arch -arm64e ansible-playbook site.yml -i production -K`
