@@ -30,6 +30,10 @@ homebrew_cask_apps:
 homebrew_user: "{{ ansible_user_id }}"
 homebrew_group: "{{ ansible_user_gid }}"
 
+mas_installed_apps:
+  - { id: 585829637, name: "Todoist" }
+  - { id: 497799835, name: "Xcode" }
+
 dotfiles:
   chezmoi:
     repo:
