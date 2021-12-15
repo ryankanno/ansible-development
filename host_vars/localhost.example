@@ -53,18 +53,15 @@ pyenv:
     git_url: https://github.com/yyuu/pyenv-virtualenv.git
     version: 91609e25f3d93cde02ce8ed4325acb5428b6bf14
   pythons:
-    - 2.7.9
-    - 3.2.6
-    - 3.3.6
-    - 3.8.2
-    - 3.10.0
+    - 3.8.10
+    - 3.10.1
 
 rbenv:
   gemset:
     git_url: https://github.com/jf/rbenv-gemset.git
     version: ed51f5e5ead2f81d0ef486b283058a9c5cc04297
   rubies:
-    - 1.9.3-p551
+    - 3.0.3
 
 dock:
   persistent_apps:
