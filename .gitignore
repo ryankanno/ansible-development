@@ -61,3 +61,4 @@ production
 tags
 
 .venv/
+.python-version
