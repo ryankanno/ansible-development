@@ -2,5 +2,7 @@
 roles:
   - name: elliotweiser.osx-command-line-tools
 collections:
+  - name: community.general
+    version: 4.0.2
   - name: geerlingguy.mac
     version: 1.4.0
