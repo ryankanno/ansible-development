@@ -5,9 +5,11 @@
     - role: bash_it
     - {role: development, ignore_errors: yes}
     - role: geerlingguy.mac.homebrew
+      ignore_errors: yes
       tags:
         - homebrew
     - role: geerlingguy.mac.mas
+      ignore_errors: yes
       tags:
         - mas
     - role: dotfiles

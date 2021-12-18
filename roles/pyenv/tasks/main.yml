@@ -12,7 +12,28 @@
     version: "{{ pyenv.virtualenv.version }}"
   tags:
     - pyenv
+    - pyenv-virtualenv
   when: pyenv.virtualenv is defined
+
+- name: pyenv | main | install pyenv-doctor
+  git:
+    repo: "{{ pyenv.doctor.git_url }}"
+    dest: "{{ pyenv_install_dir.stdout }}/plugins/pyenv-doctor"
+    version: "{{ pyenv.doctor.version }}"
+  tags:
+    - pyenv
+    - pyenv-doctor
+  when: pyenv.doctor is defined
+
+- name: pyenv | main | install pyenv-register
+  git:
+    repo: "{{ pyenv.register.git_url }}"
+    dest: "{{ pyenv_install_dir.stdout }}/plugins/pyenv-register"
+    version: "{{ pyenv.register.version }}"
+  tags:
+    - pyenv
+    - pyenv-register
+  when: pyenv.register is defined
 
 - name: pyenv | main | install .pyenvrc
   template: src=pyenvrc.j2 dest={{ pyenv_install_dir.stdout }}/.pyenvrc mode=0644
@@ -24,3 +45,4 @@
   with_items: "{{ pyenv.pythons }}"
   tags:
     - pyenv
+  when: pyenv.pythons is defined
