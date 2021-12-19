@@ -25,3 +25,5 @@ A reproducible, isolated development environment using Ansible.
 `ansible-playbook site.yml -i production -K`
 
 `arch -arm64e ansible-playbook site.yml -i production -K`
+
+`arch -arm64e ansible-playbook site.yml -i production -K --tags macports`
