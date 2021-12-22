@@ -38,4 +38,3 @@
     PATH: "{{ anyenv.install_dir | regex_replace('^~(.*)$', lookup('env', 'HOME') + '\\1') }}/bin:{{ lookup('env', 'PATH') }}"
   tags:
     - anyenv
-  when: not anyenv_install.stat.exists
