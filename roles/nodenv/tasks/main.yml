@@ -1,0 +1,18 @@
+---
+- name: nodenv | main | get nodenv installation dir
+  command: echo "{{ anyenv.install_dir }}/envs/nodenv"
+  register: nodenv_install_dir
+  tags:
+    - nodenv
+
+- name: nodenv | main | install .nodenvrc
+  template: src=nodenvrc.j2 dest={{ nodenv_install_dir.stdout }}/.nodenvrc mode=0644
+  tags:
+    - nodenv
+
+- name: nodenv | main | install node(s)
+  shell: . {{ nodenv_install_dir.stdout }}/.nodenvrc && nodenv install {{ item }} creates="{{ nodenv_install_dir.stdout }}/versions/{{ item }}/bin/node"
+  with_items: "{{ nodenv.nodes }}"
+  tags:
+    - nodenv
+  when: nodenv.nodes is defined
