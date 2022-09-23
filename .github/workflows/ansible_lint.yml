@@ -14,7 +14,7 @@ jobs:
           ansible-galaxy install -r requirements.yml
 
       - name: "lint ansible playbook"
-        uses: ansible/ansible-lint-action@v6.2.1
+        uses: ansible/ansible-lint-action@v6.6.1
         with:
           targets: "*.yml"
           override-deps: |
