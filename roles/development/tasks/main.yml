@@ -3,3 +3,7 @@
   when: ansible_distribution == "MacOSX"
   tags:
     - macports
+- include_tasks: package_installer_ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+  tags:
+    - apt-snap

@@ -1,0 +1,33 @@
+---
+- name: development | package_installer_ubuntu | installed apt packages
+  apt: name={{ item }} state=present update_cache=true
+  with_items: "{{ apt_installed_packages }}"
+  become: yes
+  tags:
+    - apt
+  when: apt_installed_packages is defined
+
+- name: development | package_installer_ubuntu | uninstalled apt packages
+  apt: name={{ item }} state=absent
+  with_items: "{{ apt_uninstalled_packages }}"
+  become: yes
+  tags:
+    - apt
+  when: apt_uninstalled_packages is defined
+
+- name: development | package_installer_ubuntu | installed snap packages
+  snap: name={{ item }} state=present classic=yes
+  with_items: "{{ snap_installed_packages }}"
+  become: yes
+  tags:
+    - snap
+  when: snap_installed_packages is defined
+
+- name: development | package_installer_ubuntu | uninstalled snap packages
+  snap: name={{ item }} state=absent
+  with_items: "{{ snap_uninstalled_packages }}"
+  become: yes
+  tags:
+    - snap
+  when: snap_uninstalled_packages is defined
+

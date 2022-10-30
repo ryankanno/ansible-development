@@ -1,6 +1,6 @@
 ---
 - name: dotfiles | chezmoi | init chezmoi
-  command: chezmoi init {{ dotfiles.chezmoi.repo.name }}#{{ dotfiles.chezmoi.repo.version }}
+  command: chezmoi init {{ dotfiles.chezmoi.repo.git_url }}
   tags:
     - dotfiles
     - chezmoi

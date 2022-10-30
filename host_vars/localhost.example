@@ -11,6 +11,26 @@ macports_installed_packages:
 macports_uninstalled_packages:
   - alacritty
 
+apt_installed_packages:
+  - erlang
+  - fzf
+  - ripgrep
+  - libbz2-dev
+  - libffi-dev
+  - libgdbm-dev
+  - liblzma-dev
+  - libncursesw5-dev
+  - libsqlite3-dev
+  - libssl-dev
+  - libreadline-dev
+  - tk-dev
+  - uuid-dev
+  - zlib1g-dev
+
+snap_installed_packages:
+  - alacritty
+  - chezmoi
+
 homebrew_bin_path: /usr/local/brew
 
 homebrew_installed_packages:
@@ -37,8 +57,7 @@ mas_installed_apps:
 dotfiles:
   chezmoi:
     repo:
-      name: https://github.com/ryankanno/dotfiles.git
-      version: HEAD
+      git_url: https://github.com/ryankanno/dotfiles.git
 
 anyenv:
   git_url: https://github.com/riywo/anyenv.git
