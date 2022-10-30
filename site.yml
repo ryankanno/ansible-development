@@ -4,14 +4,6 @@
     - role: anyenv
     - role: bash_it
     - {role: development, ignore_errors: yes}
-    - role: geerlingguy.mac.homebrew
-      ignore_errors: yes
-      tags:
-        - homebrew
-    - role: geerlingguy.mac.mas
-      ignore_errors: yes
-      tags:
-        - mas
     - role: dotfiles
     - role: vim
     - role: pyenv
@@ -20,6 +12,16 @@
       when: "'rbenv' in anyenv.environments"
     - role: nodenv
       when: "'nodenv' in anyenv.environments"
+    - role: geerlingguy.mac.homebrew
+      ignore_errors: yes
+      tags:
+        - homebrew
+      when: "ansible_distribution == 'MacOSX'"
+    - role: geerlingguy.mac.mas
+      ignore_errors: yes
+      tags:
+        - mas
+      when: "ansible_distribution == 'MacOSX'"
     - role: dock
       when: "ansible_distribution == 'MacOSX'"
     - role: finder
