@@ -28,8 +28,9 @@ apt_installed_packages:
   - zlib1g-dev
 
 snap_installed_packages:
-  - alacritty
-  - chezmoi
+  - { name: alacritty, classic: yes }
+  - { name: chezmoi, classic: yes }
+  - { name: fasd, channel: beta }
 
 homebrew_bin_path: /usr/local/brew
 
