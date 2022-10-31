@@ -6,6 +6,8 @@
     - {role: development, ignore_errors: yes}
     - role: dotfiles
     - role: vim
+      tags:
+        - vim
     - role: pyenv
       when: "'pyenv' in anyenv.environments"
     - role: rbenv

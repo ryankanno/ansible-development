@@ -6,6 +6,6 @@
 - name: vim | main | install vimrc
   shell: |
     set -o pipefail
-    curl -o - https://raw.githubusercontent.com/ryankanno/vim-config/master/install.sh | bash creates=~/.vim-config
+    curl -L -o - https://raw.githubusercontent.com/ryankanno/vim-config/master/install.sh | bash creates=~/.vim-config
   args:
     executable: /bin/bash
