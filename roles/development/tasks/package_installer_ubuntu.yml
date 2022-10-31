@@ -16,7 +16,7 @@
   when: apt_uninstalled_packages is defined
 
 - name: development | package_installer_ubuntu | installed snap packages
-  snap: name={{ item }} state=present classic=yes
+  snap: name={{ item.name }} state=present classic={{ item.classic | default('no')}} channel={{ item.channel | default('stable')}}
   with_items: "{{ snap_installed_packages }}"
   become: yes
   tags:

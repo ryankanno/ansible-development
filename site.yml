@@ -3,7 +3,10 @@
   roles:
     - role: anyenv
     - role: bash_it
-    - {role: development, ignore_errors: yes}
+    - role: development
+      ignore_errors: yes
+      tags:
+        - development
     - role: dotfiles
     - role: vim
       tags:
