@@ -4,7 +4,7 @@
   with_items: "{{ apt_installed_packages }}"
   become: yes
   tags:
-    - apt
+    - apt-snap
   when: apt_installed_packages is defined
 
 - name: development | package_installer_ubuntu | uninstalled apt packages
@@ -12,7 +12,7 @@
   with_items: "{{ apt_uninstalled_packages }}"
   become: yes
   tags:
-    - apt
+    - apt-snap
   when: apt_uninstalled_packages is defined
 
 - name: development | package_installer_ubuntu | installed snap packages
@@ -20,7 +20,7 @@
   with_items: "{{ snap_installed_packages }}"
   become: yes
   tags:
-    - snap
+    - apt-snap
   when: snap_installed_packages is defined
 
 - name: development | package_installer_ubuntu | uninstalled snap packages
@@ -28,6 +28,6 @@
   with_items: "{{ snap_uninstalled_packages }}"
   become: yes
   tags:
-    - snap
+    - apt-snap
   when: snap_uninstalled_packages is defined
 
