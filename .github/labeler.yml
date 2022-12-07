@@ -1,0 +1,15 @@
+repo:
+  - ./**/*
+
+ci/cd:
+  - .github/**/*
+
+dependencies:
+  - requirements.txt
+  - requirements.yml
+
+docs:
+  - "**/README.*"
+
+source:
+- any: ['roles/**/*', '!docs/*']
