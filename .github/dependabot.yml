@@ -22,5 +22,6 @@ updates:
       include: scope
     open-pull-requests-limit: 10
     labels:
+      - "automerge"
       - "pip"
       - "dependencies"
