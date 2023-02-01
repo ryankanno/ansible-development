@@ -4,19 +4,24 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    assignees:
+      - "ryankanno"
     commit-message:
-      prefix: chore
+      prefix: build(github)
     labels:
       - "github-actions"
+
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"
+    assignees:
+      - "ryankanno"
     commit-message:
-      prefix: fix
-      prefix-development: chore
+      prefix: build
       include: scope
     open-pull-requests-limit: 10
     labels:
+      - "automerge"
       - "pip"
       - "dependencies"
